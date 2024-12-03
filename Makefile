@@ -1,10 +1,23 @@
 .PHONY: clean
 
-app: app.c project.o result.h panic.h
+STD := -std=c99
 
-test_project: test_project project.o
+# Specifies to GCC the required warnings
+WARNS := -Wall -Wextra -Wpedantic -Wno-unused-function -Wconversion
 
-project.o: project.c project.h
+# Debug options
+DEBUG := -g3 -DDEBUG=1
+
+OPTS := -O3
+
+# Flags for compiling
+CFLAGS := $(OPTS) $(STD) $(WARNS)
+
+# Dependency libraries
+CFLAGS += $(STD) $(DEBUG)
+LDLIBS += -lm
+
+main: main.c $(wildcard sensible/**/*.{h,c})
 
 clean:
-	rm -f app test_project project.o
+	rm -f main

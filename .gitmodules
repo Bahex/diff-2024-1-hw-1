@@ -1,0 +1,3 @@
+[submodule "sensible"]
+	path = sensible
+	url = https://github.com/Bahex/sensible.git
