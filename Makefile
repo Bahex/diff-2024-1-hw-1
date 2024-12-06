@@ -3,7 +3,7 @@
 STD := -std=c99
 
 # Specifies to GCC the required warnings
-WARNS := -Wall -Wextra -Wpedantic -Wno-unused-function -Wconversion
+WARNS := -Wall -Wextra -Wpedantic -Wno-unused-function
 
 # Debug options
 DEBUG := -g3 -DDEBUG=1
